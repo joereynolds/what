@@ -4,7 +4,6 @@ FROM ubuntu:20.04
 ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get install -y lua5.3 liblua5.3-dev luarocks
-RUN luarocks install luafilesystem
 RUN luarocks install busted
 RUN luarocks install luastatic
 RUN luarocks install luacheck
