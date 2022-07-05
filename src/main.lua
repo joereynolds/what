@@ -1,4 +1,4 @@
-
+local help_parser = require "./help_parser.lua"
 
 local subcommand = arg[1]
 local command = string.match(io.read("*a"), "%w+")
@@ -28,4 +28,9 @@ if subcommand == '--verbose' or subcommand == '-v' then
     help_command = 'man ' .. command
 end
 
-print(help_command)
+local handle = io.popen(help_command)
+local command_output = handle:read("*a")
+
+local flag_help = help_parser.parse(command_output)
+print(flag_help)
+
