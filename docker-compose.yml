@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  lua:
+    build:
+      context: ./docker/lua/
+      dockerfile: Dockerfile
+    volumes:
+      - .:/var/www/html
