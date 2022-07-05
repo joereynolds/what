@@ -4,10 +4,10 @@
 
 Do you blindly copy commands in and then wonder what the flags do?
 
-Sick going through 100 pages of unalphabetised flags to find the one you're
+Sick of going through 100 pages of unalphabetised flags to find the one you're
 looking for?
 
-`what` is for you
+`what` is for you.
 
 ## Usage
 
@@ -18,11 +18,30 @@ i.e.
  rg something -g '!tests' | what
  ```
 
- would spit out (help for `-g`)
+ would output help for `-g`:
 
  ```
  -g, --glob <GLOB>...                         
         Include or exclude files and directories for searching that match the given
         glob. This always overrides any other ignore logic. Multiple glob flags may be
         ... (outnot not actually truncated, just here for example's sake)
+ ```
+
+ It can also take multiple flags.
+
+ i.e.
+
+ ```
+ rg -C -g myVariable | what
+ ```
+
+ would output help for `-C` and `-g` respectively:
+
+ ```
+-C, --context NUM
+           Show NUM lines before and after each match. This is equivalent to providing both the -B/--before-context and
+           -A/--after-context flags with the same value.
+ -g, --glob <GLOB>...                         
+        Include or exclude files and directories for searching that match the given
+        glob. This always overrides any other ignore logic. Multiple glob flags may be
  ```
