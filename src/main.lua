@@ -1,6 +1,8 @@
 
 
 local subcommand = arg[1]
+local command = string.match(io.read("*a"), "%w+")
+local help_command = command .. ' --help'
 local version = '0.0.1';
 
 local usage = [[
@@ -22,5 +24,8 @@ if subcommand == '--version' or subcommand == '-V' then
     print(version)
 end
 
-local command = string.match(io.read("*a"), "%w+")
-local handle = io.popen
+if subcommand == '--verbose' or subcommand == '-v' then
+    help_command = 'man ' .. command
+end
+
+print(help_command)
