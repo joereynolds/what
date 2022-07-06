@@ -2,7 +2,7 @@
 
 `what` takes a piped command and gets help for the flags.
 
-Do you blindly copy commands in and then wonder what the flags do?
+Do you blindly copy commands and then wonder what the flags do?
 
 Sick of going through 100 pages of unalphabetised flags to find the one you're
 looking for?
@@ -45,3 +45,11 @@ i.e.
         Include or exclude files and directories for searching that match the given
         glob. This always overrides any other ignore logic. Multiple glob flags may be
  ```
+
+ ## Development
+
+ Everything is done within docker, write your tests against the source and then
+ run `make build` to lint and test.
+
+ If you don't want to use docker, install the dependencies listed in
+ `./docker/lua/Dockerfile`.
