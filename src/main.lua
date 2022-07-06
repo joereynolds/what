@@ -1,7 +1,9 @@
-local help_parser = require "./help_parser.lua"
+local help_parser = require "./src/help_parser"
+local flags = require "./src/flags"
 
 local subcommand = arg[1]
 local command = string.match(io.read("*a"), "%w+")
+local command_flags = flags.get(command)
 local help_command = command .. ' --help'
 local version = '0.0.1';
 
@@ -31,6 +33,6 @@ end
 local handle = io.popen(help_command)
 local command_output = handle:read("*a")
 
-local flag_help = help_parser.parse(command_output)
+local flag_help = help_parser.parse(command_flags, command_output)
 print(flag_help)
 
