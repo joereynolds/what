@@ -5,8 +5,9 @@ local M = {}
 -- @param string text
 -- @return table
 function M.parse(flags, text)
-    print(text)
     print(flags)
+    print(text)
+    return {}
 end
 
 
